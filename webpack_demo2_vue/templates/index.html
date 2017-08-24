@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <style>
+    .tabbox{
+
+    }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        ————————————————————————————————————————————
+        <msg1></msg1>
+        ————————————————————————————————————————————
+        <msg2 :whats="whats" @listen="showChildMsg"></msg2>
+        ————————————————————————————————————————————
+        <br/>
+        {{whats}}
+        <br/>
+        <div class="tabbox">
+            
+        
+        <router-link class="t" to="/page">toPage</router-link>
+        <router-link class="t" to="/detail">detail</router-link>
+        <router-view></router-view>
+        </div>
+    </div>
+</body>
+
+</html>
