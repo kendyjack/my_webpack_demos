@@ -7,10 +7,13 @@
         <button class="btn" @click="sentMsg2">向兄弟组件传值</button>
         <p>{{getxiongdi}}</p>
         <button class="btn" @click="sentType2">向兄弟组件传值方法2:通过vuex</button>
+        <img src="../images/picture2.jpg">
+        <div class="bgtest bgtest2"></div>
     </div>
 </template>
 
 <script>
+
 import bus from '../../src/eventBus'
 export default{ 
         props: [
@@ -55,5 +58,12 @@ p{
 .btn{
     padding:10px;
     font-size:14px;
+}
+.bgtest{
+    width:200px;
+    height:200px;
+}
+.bgtest{
+    background:url(../images/picture2.jpg) no-repeat center top;
 }
 </style>

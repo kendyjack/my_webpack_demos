@@ -10,6 +10,8 @@ var BUILD_PATH = path.resolve(ROOT_PATH, 'build');
 var TEM_PATH = path.resolve(ROOT_PATH, 'templates');
 
 
+
+
 module.exports = {
     //项目的文件夹 可以直接用文件夹名称 默认会找index.js 也可以确定是哪个文件名字
     entry: {
@@ -46,7 +48,8 @@ module.exports = {
 
     ],
     module: {
-        loaders: [{
+        loaders: [
+            {
                 test: /\.css$/,
                 loaders: ['style-loader', 'css-loader'],
                 exclude: /node_modules/
@@ -65,6 +68,19 @@ module.exports = {
                 test: /\.vue$/,
                 exclude: /node_modules/,
                 loader: 'vue-loader'
+            },
+            {
+                test: /\.(png|jpg)$/,
+                loader: "file-loader?name=imgs/[name].[hash:8].[ext]" 
+            },
+            {
+                test: /\.html$/,
+                use: {
+                    loader: 'html-loader',
+                    options: {
+                        attrs: ['img:src', 'img:data-src'] //需要转的标签跟属性
+                    }
+                }
             }
         ]
     },
@@ -74,7 +90,7 @@ module.exports = {
         }
     },
     devServer: {
-        historyApiFallback: true,
+        historyApiFallback: true, //不跳转
         hot: true,
         inline: true,
         open: true
