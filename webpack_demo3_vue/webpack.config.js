@@ -10,8 +10,6 @@ var BUILD_PATH = path.resolve(ROOT_PATH, 'build');
 var TEM_PATH = path.resolve(ROOT_PATH, 'templates');
 
 
-
-
 module.exports = {
     //项目的文件夹 可以直接用文件夹名称 默认会找index.js 也可以确定是哪个文件名字
     entry: {
@@ -78,7 +76,7 @@ module.exports = {
                 use: {
                     loader: 'html-loader',
                     options: {
-                        attrs: ['img:src', 'img:data-src'] //需要转的标签跟属性
+                        attrs: ['img:src', 'img:data-src'] // 需要转的标签跟属性
                     }
                 }
             }

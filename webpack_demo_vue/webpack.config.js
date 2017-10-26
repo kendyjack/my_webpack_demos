@@ -65,7 +65,15 @@ module.exports = {
               test: /\.vue$/,
               exclude: /node_modules/,
               loader: 'vue-loader'
-            }
+            },
+            {
+                test: /\.jpg$/,
+                loader: "file-loader",
+                options: {
+                    name: 'static/images/[name].[ext]'
+                }
+            },
+            { test: /\.png$/, loader: "url-loader?mimetype=image/png" }
         ]
     },
     resolve: {
